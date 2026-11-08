@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bank Soal & Pembahasan Master Trigonometri Kelas X</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- MathJax Engine for LaTeX Math Formulas -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            master: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              500: '#10b981',
+              600: '#059669',
+              800: '#065f46',
+              900: '#064e3b',
+              dark: '#090d16',
+              card: '#111827'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    body { background-color: #090d16; color: #f3f4f6; }
+    .glass-nav {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .question-card {
+      background: rgba(17, 24, 39, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(8px);
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+    .question-card:hover {
+      border-color: rgba(16, 185, 129, 0.3);
+    }
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #090d16; }
+    ::-webkit-scrollbar-thumb { background: #1f2937; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #10b981; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans antialiased selection:bg-emerald-500 selection:text-white">
+
+  <!-- HEADER NAVBAR -->
+  <header class="sticky top-0 z-50 glass-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-400 flex items-center justify-center shadow-lg shadow-emerald-500/20">
+          <i class="fa-solid fa-graduation-cap text-white text-xl"></i>
+        </div>
+        <div>
+          <h1 class="text-base sm:text-lg font-extrabold bg-gradient-to-r from-white via-gray-200 to-emerald-400 bg-clip-text text-transparent">Master Trigonometri X</h1>
+          <p class="text-xs text-emerald-400 font-medium">Bank Soal &amp; Pembahasan Ujian Standar</p>
+        </div>
+      </div>
+
+      <!-- Quick Global Actions -->
+      <div class="flex items-center gap-2">
+        <button onclick="toggleAllSolutions(true)" class="px-3 py-1.5 bg-emerald-950/70 border border-emerald-500/30 hover:bg-emerald-800/40 text-emerald-300 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5">
+          <i class="fa-solid fa-eye text-emerald-400"></i>
+          <span class="hidden sm:inline">Buka Semua Kunci</span>
+        </button>
+        <button onclick="toggleAllSolutions(false)" class="px-3 py-1.5 bg-gray-900 border border-gray-700 hover:bg-gray-800 text-gray-300 rounded-lg text-xs font-semibold transition-all flex items-center gap-1.5">
+          <i class="fa-solid fa-eye-slash"></i>
+          <span class="hidden sm:inline">Tutup Semua</span>
+        </button>
+        <button onclick="toggleMobileMap()" class="lg:hidden p-2 bg-gray-800 text-emerald-400 rounded-lg border border-gray-700">
+          <i class="fa-solid fa-map-location-dot"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+    <!-- LEFT SIDEBAR: PETA PINTASAN NOMOR & FILTER -->
+    <aside id="sidebar-map" class="lg:col-span-4 space-y-6 hidden lg:block">
+      
+      <!-- Category Filter Tabs -->
+      <div class="bg-gray-900/80 p-4 rounded-2xl border border-gray-800 space-y-3">
+        <h3 class="text-xs font-extrabold tracking-wider text-emerald-400 uppercase flex items-center gap-2">
+          <i class="fa-solid fa-filter"></i> Filter Topik Materi
+        </h3>
+        <div class="space-y-1.5 text-xs font-medium">
+          <button onclick="filterCategory('all')" id="cat-all" class="w-full text-left px-3 py-2 rounded-xl transition-all flex justify-between items-center bg-emerald-600 text-white font-bold">
+            <span><i class="fa-solid fa-layer-group mr-2"></i>Semua Topik Soal</span>
+            <span class="bg-black/20 px-2 py-0.5 rounded-md font-mono">35</span>
+          </button>
+          <button onclick="filterCategory('cat1')" id="cat-cat1" class="w-full text-left px-3 py-2 rounded-xl transition-all text-gray-400 hover:bg-gray-800 hover:text-white flex justify-between items-center">
+            <span><i class="fa-solid fa-draw-polygon mr-2 text-blue-400"></i>1. Rasio Segitiga Siku-Siku</span>
+            <span class="bg-gray-800 px-2 py-0.5 rounded-md font-mono text-gray-300">1-7</span>
+          </button>
+          <button onclick="filterCategory('cat2')" id="cat-cat2" class="w-full text-left px-3 py-2 rounded-xl transition-all text-gray-400 hover:bg-gray-800 hover:text-white flex justify-between items-center">
+            <span><i class="fa-solid fa-hand mr-2 text-emerald-400"></i>2. Sudut Istimewa</span>
+            <span class="bg-gray-800 px-2 py-0.5 rounded-md font-mono text-gray-300">8-14</span>
+          </button>
+          <button onclick="filterCategory('cat3')" id="cat-cat3" class="w-full text-left px-3 py-2 rounded-xl transition-all text-gray-400 hover:bg-gray-800 hover:text-white flex justify-between items-center">
+            <span><i class="fa-solid fa-compass mr-2 text-amber-400"></i>3. Kuadran &amp; Relasi (ASTC)</span>
+            <span class="bg-gray-800 px-2 py-0.5 rounded-md font-mono text-gray-300">15-21</span>
+          </button>
+          <button onclick="filterCategory('cat4')" id="cat-cat4" class="w-full text-left px-3 py-2 rounded-xl transition-all text-gray-400 hover:bg-gray-800 hover:text-white flex justify-between items-center">
+            <span><i class="fa-solid fa-infinity mr-2 text-purple-400"></i>4. Identitas Trigonometri</span>
+            <span class="bg-gray-800 px-2 py-0.5 rounded-md font-mono text-gray-300">22-28</span>
+          </button>
+          <button onclick="filterCategory('cat5')" id="cat-cat5" class="w-full text-left px-3 py-2 rounded-xl transition-all text-gray-400 hover:bg-gray-800 hover:text-white flex justify-between items-center">
+            <span><i class="fa-solid fa-mountain-sun mr-2 text-rose-400"></i>5. Aplikasi Elevasi/Depresi</span>
+            <span class="bg-gray-800 px-2 py-0.5 rounded-md font-mono text-gray-300">29-35</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Question Grid Map -->
+      <div class="bg-gray-900/80 p-5 rounded-2xl border border-gray-800 space-y-4 sticky top-20">
+        <div class="flex justify-between items-center">
+          <h3 class="text-xs font-extrabold tracking-wider text-emerald-400 uppercase flex items-center gap-2">
+            <i class="fa-solid fa-table-cells"></i> Peta Pintasan Nomor (1 - 35)
+          </h3>
+          <span id="revealed-count" class="text-xs font-mono font-bold text-gray-400 bg-gray-800 px-2 py-1 rounded-lg">0 / 35 Terbuka</span>
+        </div>
+
+        <p class="text-[11px] text-gray-400">Klik nomor untuk loncat langsung ke soal. Tombol berubah hijau jika pembahasan sudah dibuka.</p>
+
+        <!-- Grid 1-35 -->
+        <div id="number-grid" class="grid grid-cols-7 gap-2">
+          <!-- Rendered dynamically by JavaScript -->
+        </div>
+
+        <!-- Legend -->
+        <div class="pt-3 border-t border-gray-800 grid grid-cols-2 gap-2 text-[11px] text-gray-400">
+          <div class="flex items-center gap-2"><span class="w-3 h-3 rounded bg-gray-800 border border-gray-700"></span> Belum Dibuka</div>
+          <div class="flex items-center gap-2"><span class="w-3 h-3 rounded bg-emerald-600"></span> Kunci Terbuka</div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- RIGHT CONTENT: QUESTION LIST -->
+    <section class="lg:col-span-8 space-y-6">
+      
+      <!-- Top Banner Stats -->
+      <div class="bg-gradient-to-r from-emerald-950/60 via-gray-900 to-indigo-950/60 p-5 rounded-2xl border border-emerald-500/20 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+        <div>
+          <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Modul Latihan Ujian</span>
+          <h2 class="text-xl font-bold text-white mt-1">Kumpulan 35 Soal Standar Ujian SMA</h2>
+          <p class="text-xs text-gray-400">Diacak dari tipe soal paling sering keluar di PTS, PAS, dan UBK.</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="text-right">
+            <span class="text-[10px] text-gray-400 uppercase font-bold block">Tingkat Kesulitan</span>
+            <span class="text-xs font-mono font-bold text-amber-400">Sedang - HOTS</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- QUESTIONS CONTAINER (Dynamic Inject) -->
+      <div id="questions-container" class="space-y-6">
+        <!-- Questions injected via JS -->
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- JAVASCRIPT DATA & APP LOGIC -->
+  <script>
+    // DATA 35 SOAL TRIGONOMETRI STANDAR UJIAN KELAS X
+    const questionBank = [
+      // CATEGORY 1: RASIO TRIGONOMETRI SEGITIGA SIKU-SIKU (1-7)
+      {
+        id: 1,
+        cat: 'cat1',
+        catTitle: 'Rasio Segitiga Siku-siku',
+        text: 'Diketahui segitiga $ABC$ siku-siku di $B$. Jika panjang sisi $AB = 8\\text{ cm}$ dan $BC = 6\\text{ cm}$, hitunglah nilai $\\sin(A)$ dan $\\cos(A)$!',
+        options: [
+          { key: 'A', text: '$\\sin(A) = 3/5$ dan $\\cos(A) = 4/5$' },
+          { key: 'B', text: '$\\sin(A) = 4/5$ dan $\\cos(A) = 3/5$' },
+          { key: 'C', text: '$\\sin(A) = 3/4$ dan $\\cos(A) = 4/3$' },
+          { key: 'D', text: '$\\sin(A) = 5/3$ dan $\\cos(A) = 5/4$' },
+          { key: 'E', text: '$\\sin(A) = 4/3$ dan $\\cos(A) = 3/4$' }
+        ],
+        correct: 'A',
+        explanation: `
+          <strong>Langkah Langkah Master:</strong><br>
+          1. Hitung panjang sisi miring Hipotenusa ($AC$) menggunakan Pythagoras:<br>
+             $$AC = \\sqrt{AB^2 + BC^2} = \\sqrt{8^2 + 6^2} = \\sqrt{64 + 36} = \\sqrt{100} = 10\\text{ cm}$$
+          2. Tentukan sisi relatif terhadap sudut $A$:<br>
+             - Sisi Depan ($BC$) = 6<br>
+             - Sisi Samping ($AB$) = 8<br>
+             - Sisi Miring ($AC$) = 10<br>
+          3. Gunakan rumus <strong>SOH-CAH</strong>:<br>
+             - $\\sin(A) = \\frac{\\text{Depan}}{\\text{Miring}} = \\frac{6}{10} = \\mathbf{\\frac{3}{5}}$<br>
+             - $\\cos(A) = \\frac{\\text{Samping}}{\\text{Miring}} = \\frac{8}{10} = \\mathbf{\\frac{4}{5}}$
+        `
+      },
+      {
+        id: 2,
+        cat: 'cat1',
+        catTitle: 'Rasio Segitiga Siku-siku',
+        text: 'Jika nilai $\\sin(\\theta) = \\frac{5}{13}$ dan $\\theta$ merupakan sudut lancip, tentukan nilai $\\tan(\\theta)$!',
+        options: [
+          { key: 'A', text: '$5/12$' },
+          { key: 'B', text: '$12/5$' },
+          { key: 'C', text: '$12/13$' },
+          { key: 'D', text: '$5/13$' },
+          { key: 'E', text: '$13/12$' }
+        ],
+        correct: 'A',
+        explanation: `
+          <strong>Langkah Master:</strong><br>
+          1. Dari $\\sin(\\theta) = \\frac{5}{13}$, kita tahu bahwa Sisi Depan = 5 dan Sisi Miring = 13.<br>
+          2. Gunakan Tripel Pythagoras $(5, 12, 13)$ untuk mencari Sisi Samping:<br>
+             $$\\text{Samping} = \\sqrt{13^2 - 5^2} = \\sqrt{169 - 25} = \\sqrt{144} = 12$$
+          3. Rasio Tangen adalah <strong>TOA (Depan / Samping)</strong>:<br>
+             $$\\tan(\\theta) = \\frac{\\text{Depan}}{\\text{Samping}} = \\mathbf{\\frac{5}{12}}$$
+        `
+      },
+      {
+        id: 3,
+        cat: 'cat1',
+        catTitle: 'Rasio Segitiga Siku-siku',
+        text: 'Pada segitiga siku-siku $PQR$ di $Q$, diketahui $\\cos(P) = \\frac{\\sqrt{3}}{2}$. Nilai dari $\\csc(P)$ adalah...',
+        options: [
+          { key: 'A', text: '$2$' },
+          { key: 'B', text: '$\\frac{2}{\\sqrt{3}}$' },
+          { key: 'C', text: '$\\frac{1}{2}$' },
+          { key: 'D', text: '$\\sqrt{3}$' },
+          { key: 'E', text: '$\\frac{1}{\\sqrt{3}}$' }
+        ],
+        correct: 'A',
+        explanation: `
+          <strong>Langkah Master:</strong><br>
+          1. Dari $\\cos(P) = \\frac{\\text{Samping}}{\\text{Miring}} = \\frac{\\sqrt{3}}{2}$, maka Samping = $\\sqrt{3}$ dan Miring = 2.<br>
+          2. Cari Sisi Depan:<br>
+             $$\\text{Depan} = \\sqrt{2^2 - (\\sqrt{3})^2} = \\sqrt{4 - 3} = 1$$
+          3. Maka $\\sin(P) = \\frac{\\text{Depan}}{\\text{Miring}} = \\frac{1}{2}$.<br>
+          4. Cosecant adalah kebalikan dari Sine: $\\csc(P) = \\frac{1}{\\sin(P)} = \\frac{1}{1/2} = \\mathbf{2}$.
+        `
+      },
+      {
+        id: 4,
+        cat: 'cat1',
+        catTitle: 'Rasio Segitiga Siku-siku',
+        text: 'Diketahui $\\tan(\\alpha) = p$. Nilai dari $\\cos(\\alpha)$ dalam $p$ adalah...',
+        options: [
+          { key: 'A', text: '$\\frac{1}{\\sqrt{1+p^2}}$' },
+          { key: 'B', text: '$\\frac{p}{\\sqrt{1+p^2}}$' },
+          { key: 'C', text: '$\\sqrt{1+p^2}$' },
+          { key: 'D', text: '$\\frac{1}{p}$' },
+          { key: 'E', text: '$\\frac{p-1}{p+1}$' }
+        ],
+        correct: 'A',
+        explanation: `
+          <strong>Langkah Master:</strong><br>
+          1. Ingat $\\tan(\\alpha) = \\frac{p}{1} = \\frac{\\text{Depan}}{\\text{Samping}}$.<br>
+          2. Sisi Miring (Hypotenuse):<br>
+             $$\\text{Miring} = \\sqrt{\\text{Depan}^2 + \\text{Samping}^2} = \\sqrt{p^2 + 1^2} = \\sqrt{1 + p^2}$$
+          3. Rasio Kosinus adalah $\\cos(\\alpha) = \\frac{\\text{Samping}}{\\text{Miring}} = \\mathbf{\\frac{1}{\\sqrt{1+p^2}}}$.
+        `
+      },
+      {
+        id: 5,
+        cat: 'cat1',
+        catTitle: 'Rasio Segitiga Siku-siku',
+        text: 'Segitiga $KLM$ siku-siku di $L$. Jika $\\sin(K) = \\frac{2}{3}$ dan panjang sisi miring $KM = 18\\text{ cm}$, berapa panjang sisi $LM$?',
+        options: [
+          { key: 'A', text: '$12\\text{ cm}$' },
+          { key: 'B', text: '$9\\text{ cm}$' },
+          { key: 'C', text: '$6\\text{ cm}$' },
+          { key: 'D', text: '$15\\text{ cm}$' },
+          { key: 'E', text: '$10\\text{ cm}$' }
+        ],
+        correct: 'A',
+        explanation: `
+          <strong>Langkah Master:</strong><br>
+          1. Pada segitiga $KLM$ siku-siku di $L$, sisi depan sudut $K$ adalah $LM$.<br>
+          2. $\\sin(K) = \\frac{LM}{KM} \\rightarrow \\frac{2}{3} = \\frac{LM}{18}$.<br>
+          3. Perkalian silang:<br>
+             $$LM = \\frac{2}{3} \\times 18 = \\mathbf{12\\text{ cm}}$$
+        `
+      },
+      {
+        id: 6,
+        cat: 'cat1',
+        catTitle: 'Rasio Segitiga Siku-siku',
+        text: 'Jika $\\sec(\\theta) = \\frac{17}{8}$, tentukan nilai dari $\\cot(\\theta)$!',
+        options: [
+          { key: 'A', text: '$8/15$' },
+          { key: 'B', text: '$15/8$' },
+          { key: 'C', text: '$8/17$' },
+          { key: 'D', text: '$15/17$' },
+          { key: 'E', text: '$17/15$' }
+        ],
+        correct: 'A',
+        explanation: `
+          <strong>Langkah Master:</strong><br>
+          1. $\\sec(\\theta) = \\frac{1}{\\cos(\\theta)} = \\frac{\\text{Miring}}{\\text{Samping}} = \\frac{17}{8}$.<br>
+          2. Cari Sisi Depan dengan Pythagoras (Tripel 8, 15, 17):<br>
+             $$\\text{Depan} = \\sqrt{17^2 - 8^2} = \\sqrt{289 - 64} = \\sqrt{225} = 15$$
+          3. Cotangent adalah $\\cot(\\theta) = \\frac{\\text{Samping}}{\\text{Depan}} = \\mathbf{\\frac{8}{15}}$.
+        `
+      },
+      {
+        id: 7,
+        cat: 'cat1',
+        catTitle: 'Rasio Segitiga Siku-siku',
+        text: 'Nilai dari $\\sin^2(\\theta) + \\cos^2(\\theta)$ untuk sudut siku-siku acuan manapun selalu sama dengan...',
+        options: [
+          { key: 'A', text: '$1$' },
+          { key: 'B', text: '$0$' },
+          { key: 'C', text: '$2$' },
+          { key: 'D', text: '$\\sqrt{2}$' },
+          { key: 'E', text: '$\\infty$' }
+        ],
+        correct: 'A',
+        explanation: `
+          <strong>Langkah Master:</strong><br>
+          Ini adalah <strong>Identitas Pitagoras Utama Trigonometri</strong>.<br>
+          Proof: $(\\frac{a}{c})^2 + (\\frac{b}{c})^2 = \\frac{a^2 + b^2}{c^2} = \\frac{c^2}{c^2} = \\mathbf{1}$.
+        `
+      },
+
+      // CATEGORY 2: SUDUT ISTIMEWA & TRIK TANGAN KIRI (8-14)
+      {
+        id: 8,
+        cat: 'cat2',
+        catTitle: 'Sudut Istimewa',
+        text: 'Hitunglah nilai eksplisit dari ekspresi: $\\sin(30^\\circ) + \\cos(60^\\circ) - \\tan(45^\\circ)$!',
+        options: [
+          { key: 'A', text: '$0$' },
+          { key: 'B', text: '$1$' },
+          { key: 'C', text: '$1/2$' },
+          { key: 'D', text: '$\\sqrt{3}$' },
+          { key: 'E', text: '-1' }
+        ],
+        correct: 'A',
+        explanation: `
+          <strong>Langkah Master:</strong><br>
+          Substitusikan nilai sudut istimewa:<br>
+          - $\\sin(30^\\circ) = \\frac{1}{2}$<br>
+          - $\\cos(60^\\circ) = \\frac{1}{2}$<br>
+          - $\\tan(45^\\circ) = 1$<br>
+          $$\\text{Hasil} = \\frac{1}{2} + \\frac{1}{2} - 1 = 1 - 1 = \\mathbf{0}$$
+        `
+      },
+      {
+        id: 9,
+        cat: 'cat2',
+        catTitle: 'Sudut Istimewa',
+        text: 'Nilai dari $\\frac{\\sin(60^\\circ) \\cdot \\cos(30^\\circ)}{\\tan(60^\\circ)}$ adalah...',
+        options: [
+          { key: 'A', text: '$\\frac{\\sqrt{3}}{4}$' },
+          { key: 'B', text: '$\\frac{3}{4}$' },
+          { key: 'C', text: '$\\frac{1}{2}$' },
+          { key: 'D', text: '$\\frac{\\sqrt{3}}{2}$' },
+          { key: 'E', text: '$1$' }
+        ],
+        correct: 'A',
+        explanation: `
+          <strong>Langkah Master:</strong><br>
+          1. $\\sin(60^\\circ) = \\frac{\\sqrt{3}}{2}$<br>
+          2. $\\cos(30^\\circ) = \\frac{\\sqrt{3}}{2}$<br>
+          3. $\\tan(60^\\circ) = \\sqrt{3}$<br>
+          $$\\text{Pembilang} = \\frac{\\sqrt{3}}{2} \\times \\frac{\\sqrt{3}}{2} = \\frac{3}{4}$$
+          $$\\text{Hasil Akhir} = \\frac{3/4}{\\sqrt{3}} = \\frac{3}{4\\sqrt{3}} = \\mathbf{\\frac{\\sqrt{3}}{4}}$$
+        `
+      },
+      {
+        id: 10,
+        cat: 'cat2',
+        catTitle: 'Sudut Istimewa',
+        text: 'Menggunakan rumus Trik Tangan Kiri $\\text{Nilai} = \\frac{1}{2}\\sqrt{n}$, berapa nilai $n$ untuk mencari $\\sin(60^\\circ)$?',
+        options: [
+          { key: 'A', text: '$n = 3$' },
+          { key: 'B', text: '$n = 1$' },
+          { key: 'C', text: '$n = 2$' },
+          { key: 'D', text: '$n = 4$' },
+          { key: 'E', text: '$n = 0$' }
+        ],
+        correct: 'A',
+        explanation: `
+          <strong>Langkah Master (Trik Tangan Kiri):</strong><br>
+          1. Jari Manis melambangkan sudut $60^\\circ$.<br>
+          2. Untuk $\\sin$, hitung jumlah jari di sebelah KIRI jari manis (Jempol=0°, Telunjuk=30°, Tengah=45°). Ada <strong>3 jari</strong>.<br>
+          3. Maka $n = 3$, sehingga $\\sin(60^\\circ) = \\mathbf{\\frac{1}{2}\\sqrt{3}}$.
+        `
+      },
+      {
+        id: 11,
+        cat: 'cat2',
+        catTitle: 'Sudut Istimewa',
+        text: 'Hasil perhitungan dari $\\cos^2(45^\\circ) + \\sin^2(45^\\circ)$ adalah...',
+        options: [
+          { key: 'A', text: '$1$' },
+          { key: 'B', text: '$1/2$' },
+          { key: 'C', text: '$\\sqrt{2}$' },
+          { key: 'D', text: '$2$' },
+          { key: 'E', text: '$1/4$' }
+        ],
+        correct: 'A',
+        explanation: `
+          <strong>Langkah Master:</strong><br>
+          $$\\left(\\frac{1}{2}\\sqrt{2}\\right)^2 + \\left(\\frac{1}{2}\\sqrt{2}\\right)^2 = \\frac{2}{4} + \\frac{2}{4} = \\frac{4}{4} = \\mathbf{1}$$
+        `
+      },
+      {
+        id: 12,
+        cat: 'cat2',
+        catTitle: 'Sudut Istimewa',
+        text: 'Berapakah nilai dari $\\sec(60^\\circ) + \\cot(45^\\circ)$?',
+        options: [
+          { key: 'A', text: '$3$' },
+          { key: 'B', text: '$2$' },
+          { key: 'C', text: '$1$' },
+          { key: 'D', text: '$\\sqrt{3} + 1$' },
+          { key: 'E', text: '$4$' }
+        ],
+        correct: 'A',
+        explanation: `
+          <strong>Langkah Master:</strong><br>
+          - $\\sec(60^\\circ) = \\frac{1}{\\cos(60^\\circ)} = \\frac{1}{1/2} = 2$<br>
+          - $\\cot(45^\\circ) = \\frac{1}{\\tan(45^\\circ)} = \\frac{1}{1} = 1$<br>
+          $$\\text{Hasil} = 2 + 1 = \\mathbf{3}$$
+        `
+      },
+      {
+        id: 13,
+        cat: 'cat2',
+        catTitle: 'Sudut Istimewa',
+        text: 'Nilai dari $\\frac{\\tan(30^\\circ) + \\tan(60^\\circ)}{1 - \\tan(30^\\circ)\\tan(60^\\circ)}$ adalah...',
+        options: [
+          { key: 'A', text: 'Tak Terhingga ($\\infty$)' },
+          { key: 'B', text: '$0$' },
+          { key: 'C', text: '$1$' },
+          { key: 'D', text: '$\\sqrt{3}$' },
+          { key: 'E', text: '$\\frac{1}{\\sqrt{3}}$' }
+        ],
+        correct: 'A',
+        explanation: `
+          <strong>Langkah Master:</strong><br>
+          Perhatikan penyebutnya: $1 - \\tan(30^\\circ)\\tan(60^\\circ) = 1 - \\left(\\frac{1}{\\sqrt{3}} \\cdot \\sqrt{3}\\right) = 1 - 1 = 0$.<br>
+          Suatu bilangan dibagi $0$ menghasilkan nilai <strong>Tak Terhingga ($\\infty$)</strong>. (Secara identitas ini adalah $\\tan(30^\\circ+60^\\circ) = \\tan(90^\\circ) = \\infty$).
+        `
+      },
+      {
+        id: 14,
+        cat: 'cat2',
+        catTitle: 'Sudut Istimewa',
+        text: 'Jika $x \\cdot \\sin(45^\\circ) \\cdot \\cos(45^\\circ) = 2$, maka nilai $x$ adalah...',
+        options: [
+          { key: 'A', text: '$4$' },
+          { key: 'B', text: '$2$' },
+          { key: 'C', text: '$1$' },
+          { key: 'D', text: '$8$' },
+          { key: 'E', text: '$2\\sqrt{2}$' }
+        ],
+        correct: 'A',
+        explanation: `
+          <strong>Langkah Master:</strong><br>
+          $$x \\cdot \\left(\\frac{1}{2}\\sqrt{2}\\right) \\cdot \\left(\\frac{1}{2}\\sqrt{2}\\right) = 2$$
+          $$x \\cdot \\left(\\frac{2}{4}\\right) = 2 \\rightarrow x \\cdot \\frac{1}{2} = 2 \\rightarrow x = \\mathbf{4}$$
+        `
+      },
+
+      // CATEGORY 3: KUADRAN & RELASI SUDUT (ASTC) (15-21)
+      {
+        id: 15,
+        cat: 'cat3',
+        catTitle: 'Kuadran & Relasi Sudut',
+        text: 'Sudut $\\alpha = 210^\\circ$ terletak di Kuadran III. Manakah fungsi trigonometri yang bernilai POSITIF pada sudut tersebut?',
+        options: [
+          { key: 'A', text: 'Tangen & Cotangen' },
+          { key: 'B', text: 'Sinus & Cosecan' },
+          { key: 'C', text: 'Kosinus & Secan' },
+          { key: 'D', text: 'Semua Fungsi' },
+          { key: 'E', text: 'Tidak ada' }
+        ],
+        correct: 'A',
+        explanation: `
+          <strong>Langkah Master (Aturan ASTC):</strong><br>
+          Ingat Akronim <strong>"All Students Take Calculus"</strong>:<br>
+          - Kuadran I ($0^\\circ-90^\\circ$): <strong>A</strong>ll (+)<br>
+          - Kuadran II ($90^\\circ-180^\\circ$): <strong>S</strong>ine (+)<br>
+          - Kuadran III ($180^\\circ-270^\\circ$): <strong>T</strong>angent (+)<br>
+          - Kuadran IV ($270^\\circ-360^\\circ$): <strong>C</strong>osine (+)<br>
+          Di Kuadran III ($210^\\circ$), hanya <strong>Tangen &amp; Cotangen</strong> yang bernilai positif.
+        `
+      },
+      {
+        id: 16,
+        cat: 'cat3',
+        catTitle: 'Kuadran & Relasi Sudut',
+        text: 'Nilai dari $\\sin(150^\\circ)$ adalah...',
+        options: [
+          { key: 'A', text: '$1/2$' },
+          { key: 'B', text: '$-1/2$' },
+          { key: 'C', text: '$\\frac{\\sqrt{3}}{2}$' },
+          { key: 'D', text: '$-\\frac{\\sqrt{3}}{2}$' },
+          { key: 'E', text: '$1$' }
+        ],
+        correct: 'A',
+        explanation: `
+          <strong>Langkah Master:</strong><br>
+          1. Sudut $150^\\circ$ berada di Kuadran II $\\rightarrow$ Nilai Sine POSITIF.<br>
+          2. Gunakan relasi sumbu horizontal $(180^\\circ - \\theta)$:<br>
+             $$\\sin(150^\\circ) = \\sin(180^\\circ - 30^\\circ) = +\\sin(30^\\circ) = \\mathbf{\\frac{1}{2}}$$
+        `
+      },
+      {
+        id: 17,
+        cat: 'cat3',
+        catTitle: 'Kuadran & Relasi Sudut',
+        text: 'Berapakah nilai dari $\\cos(240^\\circ)$?',
+        options: [
+          { key: 'A', text: '$-1/2$' },
+          { key: 'B', text: '$1/2$' },
+          { key: 'C', text: '$-\\frac{\\sqrt{3}}{2}$' },
+          { key: 'D', text: '$\\frac{\\sqrt{3}}{2}$' },
+          { key: 'E', text: '$-1$' }
+        ],
+        correct: 'A',
+        explanation: `
+          <strong>Langkah Master:</strong><br>
+          1. Sudut $240^\\circ$ berada di Kuadran III $\\rightarrow$ Nilai Kosinus NEGATIF.<br>
+          2. Gunakan acuan $180^\\circ + \\theta$:<br>
+             $$\\cos(240^\\circ) = \\cos(180^\\circ + 60^\\circ) = -\\cos(60^\\circ) = \\mathbf{-\\frac{1}{2}}$$
+        `
+      },
+      {
+        id: 18,
+        cat: 'cat3',
+        catTitle: 'Kuadran & Relasi Sudut',
+        text: 'Nilai dari $\\tan(315^\\circ)$ adalah...',
+        options: [
+          { key: 'A', text: '$-1$' },
+          { key: 'B', text: '$1$' },
+          { key: 'C', text: '$-\\sqrt{3}$' },
+          { key: 'D', text: '$\\sqrt{3}$' },
+          { key: 'E', text: '$0$' }
+        ],
+        correct: 'A',
+        explanation: `
+          <strong>Langkah Master:</strong><br>
+          1. Sudut $315^\\circ$ berada di Kuadran IV $\\rightarrow$ Nilai Tangen NEGATIF.<br>
+          2. Acuan $360^\\circ - \\theta$:<br>
+             $$\\tan(315^\\circ) = \\tan(360^\\circ - 45^\\circ) = -\\tan(45^\\circ) = \\mathbf{-1}$$
+        `
+      },
+      {
+        id: 19,
+        cat: 'cat3',
+        catTitle: 'Kuadran & Relasi Sudut',
+        text: 'Jika $\\cos(\\theta) = -\\frac{4}{5}$ dan $\\theta$ terletak di Kuadran II, maka nilai $\\sin(\\theta)$ adalah...',
+        options: [
+          { key: 'A', text: '$3/5$' },
+          { key: 'B', text: '$-3/5$' },
+          { key: 'C', text: '$4/5$' },
+          { key: 'D', text: '$-4/5$' },
+          { key: 'E', text: '$3/4$' }
+        ],
+        correct: 'A',
+        explanation: `
+          <strong>Langkah Master:</strong><br>
+          1. Di Kuadran II, nilai **Sinus bernilai POSITIF**.<br>
+          2. Dari Tripel Pythagoras (3, 4, 5), jika $\\cos = 4/5$, maka $\\sin = 3/5$.<br>
+          3. Karena Kuadran II, $\\sin(\\theta) = \\mathbf{+\\frac{3}{5}}$.
+        `
+      },
+      {
+        id: 20,
+        cat: 'cat3',
+        catTitle: 'Kuadran & Relasi Sudut',
+        text: 'Hasil dari $\\sin(750^\\circ)$ adalah...',
+        options: [
+          { key: 'A', text: '$1/2$' },
+          { key: 'B', text: '$\\frac{\\sqrt{3}}{2}$' },
+          { key: 'C', text: '$-1/2$' },
+          { key: 'D', text: '$0$' },
+          { key: 'E', text: '$1$' }
+        ],
+        correct: 'A',
+        explanation: `
+          <strong>Langkah Master:</strong><br>
+          Untuk sudut lebih dari $360^\\circ$, kurangi kelipatan $360^\\circ$ ($k \\cdot 360^\\circ$):<br>
+          $$750^\\circ = 2 \\times 360^\\circ + 30^\\circ = 720^\\circ + 30^\\circ$$
+          $$\\sin(750^\\circ) = \\sin(30^\\circ) = \\mathbf{\\frac{1}{2}}$$
+        `
+      },
+      {
+        id: 21,
+        cat: 'cat3',
+        catTitle: 'Kuadran & Relasi Sudut',
+        text: 'Bentuk sederhana dari $\\cos(90^\\circ + x)$ adalah...',
+        options: [
+          { key: 'A', text: '$-\\sin(x)$' },
+          { key: 'B', text: '$\\sin(x)$' },
+          { key: 'C', text: '$-\\cos(x)$' },
+          { key: 'D', text: '$\\cos(x)$' },
+          { key: 'E', text: '$-\\tan(x)$' }
+        ],
+        correct: 'A',
+        explanation: `
+          <strong>Langkah Master:</strong><br>
+          1. Sumbu vertikal $90^\\circ$ mengubah fungsi: Kosinus berubah menjadi Sinus.<br>
+          2. Sudut $(90^\\circ + x)$ berada di Kuadran II (di mana Kosinus awal bernilai NEGATIF).<br>
+          3. Maka $\\cos(90^\\circ + x) = \\mathbf{-\\sin(x)}$.
+        `
+      },
+
+      // CATEGORY 4: IDENTITAS & PENYEDERHANAAN TRIGONOMETRI (22-28)
+      {
+        id: 22,
+        cat: 'cat4',
+        catTitle: 'Identitas Trigonometri',
+        text: 'Bentuk sederhana dari $\\frac{1 - \\cos^2(x)}{\\sin(x)}$ adalah...',
+        options: [
+          { key: 'A', text: '$\\sin(x)$' },
+          { key: 'B', text: '$\\cos(x)$' },
+          { key: 'C', text: '$\\tan(x)$' },
+          { key: 'D', text: '$\\csc(x)$' },
+          { key: 'E', text: '$1$' }
+        ],
+        correct: 'A',
+        explanation: `
+          <strong>Langkah Master:</strong><br>
+          1. Gunakan identitas utama $\\sin^2(x) + \\cos^2(x) = 1 \\rightarrow 1 - \\cos^2(x) = \\sin^2(x)$.<br>
+          2. Substitusikan:<br>
+             $$\\frac{\\sin^2(x)}{\\sin(x)} = \\mathbf{\\sin(x)}$$
+        `
+      },
+      {
+        id: 23,
+        cat: 'cat4',
+        catTitle: 'Identitas Trigonometri',
+        text: 'Ekspresi $\\tan(x) \\cdot \\cos(x)$ dapat disederhanakan menjadi...',
+        options: [
+          { key: 'A', text: '$\\sin(x)$' },
+          { key: 'B', text: '$\\cos(x)$' },
+          { key: 'C', text: '$\\sec(x)$' },
+          { key: 'D', text: '$1$' },
+          { key: 'E', text: '$\\cot(x)$' }
+        ],
+        correct: 'A',
+        explanation: `
+          <strong>Langkah Master:</strong><br>
+          Ubah $\\tan(x) = \\frac{\\sin(x)}{\\cos(x)}$:<br>
+          $$\\frac{\\sin(x)}{\\cos(x)} \\cdot \\cos(x) = \\mathbf{\\sin(x)}$$
+        `
+      },
+      {
+        id: 24,
+        cat: 'cat4',
+        catTitle: 'Identitas Trigonometri',
+        text: 'Sederhanakan bentuk: $\\frac{\\sin(x)}{\\tan(x)}$!',
+        options: [
+          { key: 'A', text: '$\\cos(x)$' },
+          { key: 'B', text: '$\\sin(x)$' },
+          { key: 'C', text: '$\\sec(x)$' },
+          { key: 'D', text: '$\\csc(x)$' },
+          { key: 'E', text: '$1$' }
+        ],
+        correct: 'A',
+        explanation: `
+          <strong>Langkah Master:</strong><br>
+          $$\\frac{\\sin(x)}{\\frac{\\sin(x)}{\\cos(x)}} = \\sin(x) \\cdot \\frac{\\cos(x)}{\\sin(x)} = \\mathbf{\\cos(x)}$$
+        `
+      },
+      {
+        id: 25,
+        cat: 'cat4',
+        catTitle: 'Identitas Trigonometri',
+        text: 'Bentuk $(1 + \\tan^2(x)) \\cdot \\cos^2(x)$ setara dengan...',
+        options: [
+          { key: 'A', text: '$1$' },
+          { key: 'B', text: '$\\sin^2(x)$' },
+          { key: 'C', text: '$\\tan^2(x)$' },
+          { key: 'D', text: '$\\sec^2(x)$' },
+          { key: 'E', text: '$2$' }
+        ],
+        correct: 'A',
+        explanation: `
+          <strong>Langkah Master:</strong><br>
+          1. Identitas turunan: $1 + \\tan^2(x) = \\sec^2(x)$.<br>
+          2. Substitusi:<br>
+             $$\\sec^2(x) \\cdot \\cos^2(x) = \\frac{1}{\\cos^2(x)} \\cdot \\cos^2(x) = \\mathbf{1}$$
+        `
+      },
+      {
+        id: 26,
+        cat: 'cat4',
+        catTitle: 'Identitas Trigonometri',
+        text: 'Sederhanakan ekspresi HOTS: $\\frac{1 - \\cos^2(x)}{\\sin(x) \\cdot \\tan(x)}$!',
+        options: [
+          { key: 'A', text: '$\\cos(x)$' },
+          { key: 'B', text: '$\\sin(x)$' },
+          { key: 'C', text: '$\\tan(x)$' },
+          { key: 'D', text: '$\\sec(x)$' },
+          { key: 'E', text: '$1$' }
+        ],
+        correct: 'A',
+        explanation: `
+          <strong>Langkah Master:</strong><br>
+          1. Pembilang: $1 - \\cos^2(x) = \\sin^2(x)$.<br>
+          2. Penyebut: $\\sin(x) \\cdot \\frac{\\sin(x)}{\\cos(x)} = \\frac{\\sin^2(x)}{\\cos(x)}$.<br>
+          3. Pembagian pecahan:<br>
+             $$\\frac{\\sin^2(x)}{\\frac{\\sin^2(x)}{\\cos(x)}} = \\sin^2(x) \\cdot \\frac{\\cos(x)}{\\sin^2(x)} = \\mathbf{\\cos(x)}$$
+        `
+      },
+      {
+        id: 27,
+        cat: 'cat4',
+        catTitle: 'Identitas Trigonometri',
+        text: 'Nilai dari $(\\sin(x) + \\cos(x))^2 - 2\\sin(x)\\cos(x)$ adalah...',
+        options: [
+          { key: 'A', text: '$1$' },
+          { key: 'B', text: '$0$' },
+          { key: 'C', text: '$2$' },
+          { key: 'D', text: '$4\\sin(x)\\cos(x)$' },
+          { key: 'E', text: '$-1$' }
+        ],
+        correct: 'A',
+        explanation: `
+          <strong>Langkah Master:</strong><br>
+          1. Jabarkan kuadrat sempurna $(a+b)^2 = a^2 + 2ab + b^2$:<br>
+             $$(\\sin(x) + \\cos(x))^2 = \\sin^2(x) + 2\\sin(x)\\cos(x) + \\cos^2(x)$$
+          2. Ingat $\\sin^2(x) + \\cos^2(x) = 1$, maka ekspresi menjadi $1 + 2\\sin(x)\\cos(x)$.<br>
+          3. Kurangi dengan $2\\sin(x)\\cos(x)$:<br>
+             $$(1 + 2\\sin(x)\\cos(x)) - 2\\sin(x)\\cos(x) = \\mathbf{1}$$
+        `
+      },
+      {
+        id: 28,
+        cat: 'cat4',
+        catTitle: 'Identitas Trigonometri',
+        text: 'Bentuk $\\frac{1}{\\cos(x)} - \\frac{\\cos(x)}{1 + \\sin(x)}$ setara dengan...',
+        options: [
+          { key: 'A', text: '$\\tan(x)$' },
+          { key: 'B', text: '$\\cot(x)$' },
+          { key: 'C', text: '$\\sin(x)$' },
+          { key: 'D', text: '$\\cos(x)$' },
+          { key: 'E', text: '$\\sec(x)$' }
+        ],
+        correct: 'A',
+        explanation: `
+          <strong>Langkah Master:</strong><br>
+          1. Samakan penyebut:<br>
+             $$\\frac{(1 + \\sin(x)) - \\cos^2(x)}{\\cos(x)(1 + \\sin(x))}$$
+          2. Gunakan $1 - \\cos^2(x) = \\sin^2(x)$:<br>
+             $$\\frac{\\sin(x) + \\sin^2(x)}{\\cos(x)(1 + \\sin(x))} = \\frac{\\sin(x)(1 + \\sin(x))}{\\cos(x)(1 + \\sin(x))} = \\frac{\\sin(x)}{\\cos(x)} = \\mathbf{\\tan(x)}$$
+        `
+      },
+
+      // CATEGORY 5: APLIKASI ELEVASI & DEPRESI (29-35)
+      {
+        id: 29,
+        cat: 'cat5',
+        catTitle: 'Aplikasi Elevasi & Depresi',
+        text: 'Seorang siswa berdiri sejauh $12\\text{ m}$ dari kaki sebuah tiang bendera. Ia melihat puncak tiang dengan sudut elevasi $60^\\circ$. Jika tinggi mata siswa dari tanah $1,6\\text{ m}$, tinggi tiang bendera tersebut adalah...',
+        options: [
+          { key: 'A', text: '$(12\\sqrt{3} + 1,6)\\text{ m}$' },
+          { key: 'B', text: '$(12\\sqrt{3})\\text{ m}$' },
+          { key: 'C', text: '$(6\\sqrt{3} + 1,6)\\text{ m}$' },
+          { key: 'D', text: '$(12 + 1,6\\sqrt{3})\\text{ m}$' },
+          { key: 'E', text: '$(24 + 1,6)\\text{ m}$' }
+        ],
+        correct: 'A',
+        explanation: `
+          <strong>Langkah Master:</strong><br>
+          1. Gunakan rasio Tangen (TOA): $\\tan(60^\\circ) = \\frac{x}{\\text{Jarak}} = \\frac{x}{12}$.<br>
+          2. Karena $\\tan(60^\\circ) = \\sqrt{3}$, maka $x = 12\\sqrt{3}\\text{ m}$.<br>
+          3. Tambahkan tinggi pengamat:<br>
+             $$\\text{Tinggi Total} = x + h_{\\text{mata}} = \\mathbf{(12\\sqrt{3} + 1,6)\\text{ m}}$$
+        `
+      },
+      {
+        id: 30,
+        cat: 'cat5',
+        catTitle: 'Aplikasi Elevasi & Depresi',
+        text: 'Dari puncak mercusuar setinggi $80\\text{ m}$, seorang petugas melihat kapal di laut dengan sudut depresi $30^\\circ$. Jarak horisontal kapal dari kaki mercusuar adalah...',
+        options: [
+          { key: 'A', text: '$80\\sqrt{3}\\text{ m}$' },
+          { key: 'B', text: '$\\frac{80}{\\sqrt{3}}\\text{ m}$' },
+          { key: 'C', text: '$40\\sqrt{3}\\text{ m}$' },
+          { key: 'D', text: '$160\\text{ m}$' },
+          { key: 'E', text: '$80\\text{ m}$' }
+        ],
+        correct: 'A',
+        explanation: `
+          <strong>Langkah Master:</strong><br>
+          Sudut depresi sama dengan sudut elevasi kapal ke puncak ($30^\\circ$).<br>
+          $$\\tan(30^\\circ) = \\frac{\\text{Tinggi}}{\\text{Jarak}} \\rightarrow \\frac{1}{\\sqrt{3}} = \\frac{80}{d}$$
+          $$d = \\mathbf{80\\sqrt{3}\\text{ m}}$$
+        `
+      },
+      {
+        id: 31,
+        cat: 'cat5',
+        catTitle: 'Aplikasi Elevasi & Depresi',
+        text: 'Sebuah tangga panjangnya $6\\text{ m}$ disandarkan pada dinding rumah. Tangga membentuk sudut $60^\\circ$ dengan tanah. Tinggi dinding yang dicapai tangga adalah...',
+        options: [
+          { key: 'A', text: '$3\\sqrt{3}\\text{ m}$' },
+          { key: 'B', text: '$3\\text{ m}$' },
+          { key: 'C', text: '$6\\sqrt{3}\\text{ m}$' },
+          { key: 'D', text: '$2\\sqrt{3}\\text{ m}$' },
+          { key: 'E', text: '$4\\text{ m}$' }
+        ],
+        correct: 'A',
+        explanation: `
+          <strong>Langkah Master:</strong><br>
+          Panjang tangga adalah sisi miring ($6\\text{ m}$). Tinggi dinding adalah sisi depan.<br>
+          Gunakan rumus Sinus (SOH):<br>
+          $$\\sin(60^\\circ) = \\frac{\\text{Tinggi}}{6} \\rightarrow \\frac{\\sqrt{3}}{2} = \\frac{t}{6}$$
+          $$t = 6 \\times \\frac{\\sqrt{3}}{2} = \\mathbf{3\\sqrt{3}\\text{ m}}$$
+        `
+      },
+      {
+        id: 32,
+        cat: 'cat5',
+        catTitle: 'Aplikasi Elevasi & Depresi',
+        text: 'Jarak antara pengamat dan dasar pohon adalah $20\\text{ m}$. Jika sudut elevasi pengamat ke puncak pohon $45^\\circ$ (abaikan tinggi pengamat), berapa tinggi pohon?',
+        options: [
+          { key: 'A', text: '$20\\text{ m}$' },
+          { key: 'B', text: '$10\\sqrt{2}\\text{ m}$' },
+          { key: 'C', text: '$20\\sqrt{3}\\text{ m}$' },
+          { key: 'D', text: '$10\\text{ m}$' },
+          { key: 'E', text: '$40\\text{ m}$' }
+        ],
+        correct: 'A',
+        explanation: `
+          <strong>Langkah Master:</strong><br>
+          $$\\tan(45^\\circ) = \\frac{\\text{Tinggi}}{20} \\rightarrow 1 = \\frac{t}{20} \\rightarrow t = \\mathbf{20\\text{ m}}$$
+          (Pada sudut $45^\\circ$, segitiga siku-siku berbentuk sama kaki, sehingga tinggi = jarak dasar).
+        `
+      },
+      {
+        id: 33,
+        cat: 'cat5',
+        catTitle: 'Aplikasi Elevasi & Depresi',
+        text: 'Helikopter terbang pada ketinggian $500\\text{ m}$. Pilot melihat markas darat dengan sudut depresi $45^\\circ$. Berapa jarak langsung helikopter ke markas (sisi miring)?',
+        options: [
+          { key: 'A', text: '$500\\sqrt{2}\\text{ m}$' },
+          { key: 'B', text: '$500\\text{ m}$' },
+          { key: 'C', text: '$1000\\text{ m}$' },
+          { key: 'D', text: '$250\\sqrt{2}\\text{ m}$' },
+          { key: 'E', text: '$500\\sqrt{3}\\text{ m}$' }
+        ],
+        correct: 'A',
+        explanation: `
+          <strong>Langkah Master:</strong><br>
+          Ketinggian adalah sisi depan ($500\\text{ m}$). Jarak langsung adalah sisi miring ($s$).<br>
+          $$\\sin(45^\\circ) = \\frac{500}{s} \\rightarrow \\frac{1}{\\sqrt{2}} = \\frac{500}{s} \\rightarrow s = \\mathbf{500\\sqrt{2}\\text{ m}}$$
+        `
+      },
+      {
+        id: 34,
+        cat: 'cat5',
+        catTitle: 'Aplikasi Elevasi & Depresi',
+        text: 'Ahmad melihat lampu puncak gedung dengan sudut elevasi $30^\\circ$. Setelah berjalan mendekat sejauh $40\\text{ m}$, sudut elevasinya menjadi $60^\\circ$. Tinggi gedung tersebut adalah...',
+        options: [
+          { key: 'A', text: '$20\\sqrt{3}\\text{ m}$' },
+          { key: 'B', text: '$40\\sqrt{3}\\text{ m}$' },
+          { key: 'C', text: '$20\\text{ m}$' },
+          { key: 'D', text: '$10\\sqrt{3}\\text{ m}$' },
+          { key: 'E', text: '$30\\text{ m}$' }
+        ],
+        correct: 'A',
+        explanation: `
+          <strong>Langkah Master (Tipe HOTS Dua Sudut):</strong><br>
+          Misal tinggi gedung $= h$ dan jarak posisi kedua $= x$.<br>
+          1. Dari posisi 2: $\\tan(60^\\circ) = \\frac{h}{x} \\rightarrow h = x\\sqrt{3}$.<br>
+          2. Dari posisi 1: $\\tan(30^\\circ) = \\frac{h}{x + 40} \\rightarrow \\frac{1}{\\sqrt{3}} = \\frac{x\\sqrt{3}}{x + 40}$.<br>
+          3. Selesaikan persamaan:<br>
+             $$x + 40 = 3x \\rightarrow 2x = 40 \\rightarrow x = 20\\text{ m}$$
+          4. Maka tinggi $h = x\\sqrt{3} = \\mathbf{20\\sqrt{3}\\text{ m}}$.
+        `
+      },
+      {
+        id: 35,
+        cat: 'cat5',
+        catTitle: 'Aplikasi Elevasi & Depresi',
+        text: 'Sebuah bayangan tiang di tanah memiliki panjang $5\\text{ m}$ saat sudut elevasi matahari adalah $60^\\circ$. Berapakah tinggi tiang tersebut?',
+        options: [
+          { key: 'A', text: '$5\\sqrt{3}\\text{ m}$' },
+          { key: 'B', text: '$\\frac{5}{\\sqrt{3}}\\text{ m}$' },
+          { key: 'C', text: '$10\\text{ m}$' },
+          { key: 'D', text: '$5\\text{ m}$' },
+          { key: 'E', text: '$10\\sqrt{3}\\text{ m}$' }
+        ],
+        correct: 'A',
+        explanation: `
+          <strong>Langkah Master:</strong><br>
+          $$\\tan(60^\\circ) = \\frac{\\text{Tinggi}}{\\text{Bayangan}} \\rightarrow \\sqrt{3} = \\frac{t}{5}$$
+          $$t = \\mathbf{5\\sqrt{3}\\text{ m}}$$
+        `
+      }
+    ];
+
+    // STATE MANAGEMENT
+    const revealedState = new Array(questionBank.length + 1).fill(false);
+    let activeFilter = 'all';
+
+    // RENDER NUMBER MAP IN SIDEBAR
+    function renderNumberGrid() {
+      const grid = document.getElementById('number-grid');
+      grid.innerHTML = '';
+
+      questionBank.forEach(q => {
+        const isRevealed = revealedState[q.id];
+        const btn = document.createElement('button');
+        btn.setAttribute('onclick', `scrollToQuestion(${q.id})`);
+        btn.id = `map-btn-${q.id}`;
+        btn.className = `w-full aspect-square rounded-lg font-mono font-bold text-xs transition-all flex items-center justify-center ${
+          isRevealed 
+            ? 'bg-emerald-600 text-white shadow-md shadow-emerald-600/30 ring-1 ring-emerald-400' 
+            : 'bg-gray-800 text-gray-300 hover:bg-gray-700 border border-gray-700'
+        }`;
+        btn.innerText = q.id;
+        grid.appendChild(btn);
+      });
+
+      updateRevealedCount();
+    }
+
+    function updateRevealedCount() {
+      const count = revealedState.filter(Boolean).length;
+      document.getElementById('revealed-count').innerText = `${count} / 35 Terbuka`;
+    }
+
+    // RENDER QUESTIONS CARDS
+    function renderQuestions() {
+      const container = document.getElementById('questions-container');
+      container.innerHTML = '';
+
+      const filtered = activeFilter === 'all' 
+        ? questionBank 
+        : questionBank.filter(q => q.cat === activeFilter);
+
+      filtered.forEach((q) => {
+        const isRevealed = revealedState[q.id];
+        
+        const card = document.createElement('div');
+        card.id = `question-${q.id}`;
+        card.className = "question-card p-6 rounded-2xl relative scroll-mt-24";
+        
+        card.innerHTML = `
+          <!-- Question Header Badge -->
+          <div class="flex flex-wrap justify-between items-center gap-2 mb-4 pb-3 border-b border-gray-800">
+            <div class="flex items-center gap-2.5">
+              <span class="w-8 h-8 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-mono font-extrabold text-sm flex items-center justify-center">
+                ${q.id}
+              </span>
+              <span class="text-xs font-semibold text-gray-400">Topik: <strong class="text-emerald-400 font-normal">${q.catTitle}</strong></span>
+            </div>
+            <span class="text-[11px] font-mono bg-gray-800 text-gray-400 px-2.5 py-1 rounded-md border border-gray-700">Soal Standar Ujian</span>
+          </div>
+
+          <!-- Question Text -->
+          <div class="text-sm sm:text-base text-gray-100 font-medium leading-relaxed mb-5">
+            ${q.text}
+          </div>
+
+          <!-- Multiple Choice Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-6">
+            ${q.options.map(opt => `
+              <div class="p-3 bg-gray-900/60 border border-gray-800 rounded-xl text-xs sm:text-sm text-gray-300 flex items-center gap-3">
+                <span class="w-6 h-6 rounded-lg bg-gray-800 text-gray-400 font-mono font-bold text-xs flex items-center justify-center shrink-0 border border-gray-700">${opt.key}</span>
+                <span>${opt.text}</span>
+              </div>
+            `).join('')}
+          </div>
+
+          <!-- Action Toggle Bar -->
+          <div class="flex items-center justify-between pt-2">
+            <button onclick="toggleSolution(${q.id})" class="px-4 py-2.5 ${isRevealed ? 'bg-emerald-600 text-white' : 'bg-gray-800 hover:bg-gray-700 text-emerald-400'} rounded-xl text-xs font-bold transition-all flex items-center gap-2 border border-emerald-500/20">
+              <i class="fa-solid ${isRevealed ? 'fa-eye-slash' : 'fa-key'}"></i>
+              <span>${isRevealed ? 'Sembunyikan Pembahasan' : 'Tampilkan Kunci &amp; Pembahasan'}</span>
+            </button>
+
+            <span id="badge-key-${q.id}" class="${isRevealed ? 'inline-block' : 'hidden'} px-3 py-1 bg-emerald-950 border border-emerald-500/40 text-emerald-300 text-xs font-mono font-bold rounded-lg">
+              Kunci: (${q.correct})
+            </span>
+          </div>
+
+          <!-- Derivation Solution Box -->
+          <div id="solution-box-${q.id}" class="${isRevealed ? 'block' : 'hidden'} mt-5 p-5 bg-emerald-950/20 border border-emerald-500/30 rounded-xl space-y-3 text-xs sm:text-sm text-gray-200">
+            <div class="flex items-center gap-2 text-emerald-400 font-bold text-xs uppercase tracking-wider border-b border-emerald-500/20 pb-2">
+              <i class="fa-solid fa-lightbulb"></i> Pembahasan Master Langkah demi Langkah:
+            </div>
+            <div class="leading-relaxed font-sans space-y-2">
+              ${q.explanation}
+            </div>
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+
+      // Re-trigger MathJax Typeset for freshly injected LaTeX
+      if (window.MathJax && window.MathJax.typesetPromise) {
+        window.MathJax.typesetPromise();
+      }
+    }
+
+    // TOGGLE SINGLE SOLUTION
+    function toggleSolution(id) {
+      revealedState[id] = !revealedState[id];
+      const solBox = document.getElementById(`solution-box-${id}`);
+      const keyBadge = document.getElementById(`badge-key-${id}`);
+      
+      if (solBox) {
+        if (revealedState[id]) {
+          solBox.classList.remove('hidden');
+          solBox.classList.add('block');
+          keyBadge.classList.remove('hidden');
+        } else {
+          solBox.classList.remove('block');
+          solBox.classList.add('hidden');
+          keyBadge.classList.add('hidden');
+        }
+      }
+      renderNumberGrid();
+    }
+
+    // GLOBAL TOGGLE ALL
+    function toggleAllSolutions(show) {
+      for (let i = 1; i <= questionBank.length; i++) {
+        revealedState[i] = show;
+      }
+      renderQuestions();
+      renderNumberGrid();
+    }
+
+    // FILTER CATEGORY
+    function filterCategory(catKey) {
+      activeFilter = catKey;
+      ['all', 'cat1', 'cat2', 'cat3', 'cat4', 'cat5'].forEach(c => {
+        const btn = document.getElementById(`cat-${c}`);
+        if (c === catKey) {
+          btn.className = "w-full text-left px-3 py-2 rounded-xl transition-all flex justify-between items-center bg-emerald-600 text-white font-bold";
+        } else {
+          btn.className = "w-full text-left px-3 py-2 rounded-xl transition-all text-gray-400 hover:bg-gray-800 hover:text-white flex justify-between items-center";
+        }
+      });
+      renderQuestions();
+    }
+
+    // SCROLL TO QUESTION
+    function scrollToQuestion(id) {
+      // If filtered out, reset filter first
+      if (activeFilter !== 'all') {
+        const q = questionBank.find(item => item.id === id);
+        if (q && q.cat !== activeFilter) {
+          filterCategory('all');
+        }
+      }
+      
+      setTimeout(() => {
+        const el = document.getElementById(`question-${id}`);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // Highlight flash
+          el.classList.add('ring-2', 'ring-emerald-400');
+          setTimeout(() => el.classList.remove('ring-2', 'ring-emerald-400'), 1500);
+        }
+      }, 50);
+    }
+
+    // MOBILE SIDEBAR TOGGLE
+    function toggleMobileMap() {
+      const sidebar = document.getElementById('sidebar-map');
+      sidebar.classList.toggle('hidden');
+    }
+
+    // INIT ON LOAD
+    window.onload = function() {
+      renderNumberGrid();
+      renderQuestions();
+    };
+  </script>
+</body>
+</html>
